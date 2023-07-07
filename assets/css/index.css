@@ -4,17 +4,17 @@ body {
 }
 a {
   text-decoration: none;
-  color: #5dbe8a;
+  color: #dfc243;
 }
 a:hover {
-  color: #5dbe8a;
+  color: #dfc243;
 }
 pre {
   /* background-color: #1b242b; */
   padding: 20px;
   width: 80%;
   border-radius: 5px;
-  border: 1px solid #5dbe8a;
+  border: 1px solid #dfc243;
   overflow: auto;
   overflow-y: hidden;
 }

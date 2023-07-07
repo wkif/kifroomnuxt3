@@ -2,7 +2,6 @@
 const { page, prev, next, toc } = useContent()
 const docShow = ref(false)
 function changedocShow() {
-  console.log('changedocShow', changedocShow)
   docShow.value = !docShow.value
 }
 </script>
@@ -42,6 +41,7 @@ function changedocShow() {
   </div>
   <div m="t-50px" class="flex" flex="col">
     <NuxtLink v-if="prev" p="10px" :to="prev._path">上一篇：{{ prev.title }}</NuxtLink>
-    <NuxtLink v-if="next" p="10px" :to="next._path">下一篇{{ next.title }}</NuxtLink>
+    <NuxtLink v-if="next" p="10px" :to="next._path">下一篇：{{ next.title }}</NuxtLink>
   </div>
+  <Valine />
 </template>

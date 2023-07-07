@@ -6,6 +6,8 @@
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/about">About</NuxtLink>
       <NuxtLink to="/project">Project</NuxtLink>
+      <NuxtLink to="/link">Link</NuxtLink>
+
     </div>
     <Darkmode right="0" />
   </div>

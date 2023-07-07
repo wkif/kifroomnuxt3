@@ -13,5 +13,14 @@ const socialLink = [
   }
 ]
 const name = 'kif'
-
-export { socialLink, name }
+const valineConfig = {
+  el: '#valineBox',
+  appId: 'b7AAVOuWhWIEQsQfviV12FRp-gzGzoHsz',
+  appKey: 'TYFSaiPIN5WAmTU3nv8wG8wb',
+  serverURLs: 'https://b7aavouw.lc-cn-n1-shared.com',
+  avatar: 'wavatar',
+  visitor: true,
+  recordIP: true,
+  placeholder: '说说你想法'
+}
+export { socialLink, name, valineConfig }
