@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppHeader h="6vh" />
-    <slot  />
+    <slot />
     <AppFooter h="5vh" />
   </div>
 </template>
