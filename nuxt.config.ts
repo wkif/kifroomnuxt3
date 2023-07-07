@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
+  app:{
+     pageTransition: { name: 'page', mode: 'out-in' }
+  },
   modules: ['@unocss/nuxt', '@nuxt/content'],
   unocss: {
     // icon: https://icones.js.org/   interactive: https://unocss.dev/interactive/
@@ -24,5 +28,8 @@ export default defineNuxtConfig({
       },
       preload: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml']
     }
-  }
+  },
+  // plugins: [
+  //   { src: '~/plugins/nprogress.ts', mode: 'client' }
+  // ]
 })

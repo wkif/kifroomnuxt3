@@ -18,7 +18,7 @@ function changedocShow() {
         fixed
         right="10px"
         w="17vw"
-        class="dark:bg-#f5f5f5 text-gray-800 bg-#ffffff dark:text-gray-800"
+        class="dark:bg-#4c545f text-gray-800 bg-#ffffff dark:text-gray-800"
         p="10px"
         rounded="10px"
       >

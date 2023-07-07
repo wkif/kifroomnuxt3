@@ -57,13 +57,13 @@ onMounted(() => {
   <div>
     <div
       v-show="!isDark"
-      text="30px #b2cf87"
+      text="30px #dfc243"
       class="i-mdi-weather-night-partly-cloudy"
       @click="toggleTheme"
     ></div>
     <div
       v-show="isDark"
-      text="30px #b2cf87"
+      text="30px #dfc243"
       class="i-mdi-weather-sunset"
       @click="toggleTheme"
     ></div>
