@@ -32,15 +32,11 @@ function changePage(e: number) {
 <template>
   <div m="t-200px">
     <ContentList v-slot="{ list }" :query="query">
-      <div class="flex" flex="items-center wrap" w="100%">
+      <div>
         <div
           v-for="article in list.slice(prev, next)"
           :key="article._path"
           p="10px"
-          h="10rem"
-          w="30%"
-          m="10px"
-          rounded="10px"
         >
           <NuxtLink :to="article._path" hover="text-#43b244">
             <h2>{{ article.title }}</h2></NuxtLink
@@ -55,6 +51,8 @@ function changePage(e: number) {
         篇文章
       </div>
     </ContentList>
+  <BackTop />
+
     <div class="flex" flex="items-center justify-between" p="20px" text="30px" w="30%">
       <div v-show="page !== 1" class="i-mdi-arrow-left-thick" @click="changePage(-1)"></div>
       <div v-show="page !== totalPage" class="i-mdi-arrow-right-thick" @click="changePage(1)"></div>

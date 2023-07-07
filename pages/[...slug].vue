@@ -39,9 +39,14 @@ function changedocShow() {
       </div>
     </div>
   </div>
-  <div m="t-50px" class="flex" flex="col">
-    <NuxtLink v-if="prev" p="10px" :to="prev._path">上一篇：{{ prev.title }}</NuxtLink>
-    <NuxtLink v-if="next" p="10px" :to="next._path">下一篇：{{ next.title }}</NuxtLink>
+  <div m="t-50px" class="flex" w="80%" flex="row items-center">
+    <div h="4rem" bg="#ffffff" w="50%" dark:bg-gray-800 m="10px" text="center" rounded="10px">
+      <NuxtLink v-if="prev" p="10px" :to="prev._path">上一篇：{{ prev.title }}</NuxtLink>
+    </div>
+    <div h="4rem" bg="#ffffff" w="50%" dark:bg-gray-800 m="10px" text="center" rounded="10px">
+      <NuxtLink v-if="next" p="10px" :to="next._path">下一篇：{{ next.title }}</NuxtLink>
+    </div>
   </div>
+  <BackTop />
   <Valine />
 </template>
