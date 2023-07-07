@@ -13,6 +13,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",
     "@iconify-json/mdi": "^1.1.52",
+    "@nuxt/content": "^2.7.0",
     "@types/node": "^18",
     "@unocss/nuxt": "^0.51.5",
     "@unocss/preset-attributify": "^0.53.4",

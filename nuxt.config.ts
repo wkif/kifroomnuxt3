@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@unocss/nuxt'],
+  modules: ['@unocss/nuxt', '@nuxt/content'],
   unocss: {
     // icon: https://icones.js.org/   interactive: https://unocss.dev/interactive/
     uno: true,
@@ -9,5 +9,20 @@ export default defineNuxtConfig({
     shortcuts: {},
     rules: []
   },
-  css: ['~/assets/css/index.css', '~/assets/css/font.css']
+  css: ['~/assets/css/index.css', '~/assets/css/font.css'],
+  content: {
+    // https://content.nuxtjs.org/api/configuration
+    documentDriven: true,
+    highlight: {
+      theme: {
+        // Default theme (same as single string)
+        default: 'material-ocean',
+        // Theme used if `html.dark`
+        dark: 'material-darker',
+        // Theme used if `html.sepia`
+        sepia: 'monokai'
+      },
+      preload: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml']
+    }
+  }
 })

@@ -3,7 +3,7 @@ import { name } from '@/config'
 </script>
 
 <template>
-  <div fixed bottom="0" w="100%" text="center" p="10px">
+  <div  w="100%" text="center" p="t-10px">
     <a
       href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
       target="_blank"

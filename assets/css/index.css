@@ -9,3 +9,12 @@ a {
 a:hover {
   color: #5dbe8a;
 }
+pre {
+  /* background-color: #1b242b; */
+  padding: 20px;
+  width: 80%;
+  border-radius: 5px;
+  border: 1px solid #5dbe8a;
+  overflow: auto;
+  overflow-y: hidden;
+}
