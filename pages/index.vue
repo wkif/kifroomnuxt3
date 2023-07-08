@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import { blogname, welcome } from '@/data/config'
 
 const query: QueryBuilderParams = { path: '/post', sort: [{ date: -1 }] }
 const length = ref(0)
@@ -30,18 +31,28 @@ function changePage(e: number) {
 </script>
 
 <template>
-  <div m="t-200px">
+  <div m="t-100px">
+    <h1 class="wobble-hor-bottom">👋 Welcome to {{ blogname }}</h1>
+    {{ welcome }}
+  </div>
+  <div m="t-100px">
     <ContentList v-slot="{ list }" :query="query">
       <div>
         <div
           v-for="article in list.slice(prev, next)"
           :key="article._path"
+          class="slide-in-elliptic-top-fwd"
           p="10px"
+          w="70%"
+          m="l-10%"
         >
           <NuxtLink :to="article._path" hover="text-#43b244">
             <h2>{{ article.title }}</h2></NuxtLink
           >
-          <p>{{ article.date }}</p>
+          <div w="30%" h="1px" bg="#000000"></div>
+          <p>{{ article.description }}</p>
+          <p text="right">{{ article.date }}</p>
+          
         </div>
       </div>
 
@@ -51,7 +62,7 @@ function changePage(e: number) {
         篇文章
       </div>
     </ContentList>
-  <BackTop />
+    <BackTop />
 
     <div class="flex" flex="items-center justify-between" p="20px" text="30px" w="30%">
       <div v-show="page !== 1" class="i-mdi-arrow-left-thick" @click="changePage(-1)"></div>

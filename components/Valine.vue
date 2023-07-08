@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { valineConfig } from '@/config'
+import { valineConfig } from '@/data/config'
 
 onMounted(() => {
   import('valine').then((res) => {

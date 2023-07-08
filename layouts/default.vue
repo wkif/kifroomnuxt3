@@ -52,7 +52,7 @@ onMounted(() => {
     <canvas id="el2" ref="el2" class="absolute"></canvas>
   </div>
   <div>
-    <AppHeader h="6vh" />
+    <AppHeader h="6vh" z="2" />
     <div p="t-8vh l-50px r-50px b-8vh" min-h="83vh" class="flex" flex="row">
       <Aside w="10vw" />
       <div p="l-10vw">

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { name } from '@/config'
+import { name } from '@/data/config'
 </script>
 
 <template>
-  <div  w="100%" text="center" p="t-10px">
+  <div w="100%" text="center" p="t-10px">
     <a
       href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
       target="_blank"
@@ -15,3 +15,4 @@ import { name } from '@/config'
     2023-PRESENT © {{ name }}
   </div>
 </template>
+~/data/config

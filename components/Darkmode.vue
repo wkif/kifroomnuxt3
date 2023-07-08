@@ -37,18 +37,20 @@ function changeTheme() {
   })
 }
 onMounted(() => {
-  if (process.client && isChrome() ) {
+  if (process.client && isChrome()) {
+    // changeTheme()
+    // 根据时间判断是否开启深色模式
+    const hour = new Date().getHours()
+    if (hour >= 18 || hour <= 6) {
+      isDark.value = false
+    } else {
+      isDark.value = true
+    }
     changeTheme()
   } else {
     const msg =
       '系统深色模式采用 View Transition API 实现，当前浏览器非Chrome，暂未适配，详情： https://developer.mozilla.org/en-US/docs/Web/API/Document/startViewTransition'
     alert(msg)
-  }
-  // 根据时间判断是否开启深色模式
-  const hour = new Date().getHours()
-  if (hour >= 18 || hour <= 6) {
-    isDark.value = true
-    changeTheme()
   }
 })
 </script>

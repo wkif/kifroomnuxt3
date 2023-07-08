@@ -1,3 +1,7 @@
+import bookshelfList from './bookshelfData'
+import filmList from './filmData'
+import linkData from './link'
+
 const socialLink = [
   {
     icon: 'i-mdi-github',
@@ -12,7 +16,10 @@ const socialLink = [
     link: 'mailto:kif101001000@163.com'
   }
 ]
+const blogname = 'kifroom'
 const name = 'kif'
+// 欢迎语
+const welcome = '欢迎来到kifroom'
 const valineConfig = {
   el: '#valineBox',
   appId: 'b7AAVOuWhWIEQsQfviV12FRp-gzGzoHsz',
@@ -23,4 +30,5 @@ const valineConfig = {
   recordIP: true,
   placeholder: '说说你想法'
 }
-export { socialLink, name, valineConfig }
+
+export { socialLink, name, valineConfig, blogname, welcome, bookshelfList, filmList, linkData }

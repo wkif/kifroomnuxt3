@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     shortcuts: {},
     rules: []
   },
-  css: ['~/assets/css/index.css', '~/assets/css/font.css'],
+  css: ['~/assets/css/index.css', '~/assets/css/font.css', '~/assets/css/animista.css'],
   content: {
     // https://content.nuxtjs.org/api/configuration
     documentDriven: true,
