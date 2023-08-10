@@ -28,7 +28,7 @@ function initFlower() {
     }
   ]
   canvasList.forEach((canvas, index) => {
-    canvas.width = window.innerWidth-20
+    canvas.width = window.innerWidth - 20
     canvas.height = window.innerHeight
     const plum = new Plum(canvas)
     const branch = branchList[index]
@@ -47,18 +47,20 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="z--1 absolute w-98vw h-screen">
-    <canvas id="el" ref="el" class="absolute"></canvas>
-    <canvas id="el2" ref="el2" class="absolute"></canvas>
-  </div>
   <div>
-    <AppHeader h="6vh" z="2" />
-    <div p="t-8vh l-50px r-50px b-8vh" min-h="83vh" class="flex" flex="row">
-      <Aside w="10vw" />
-      <div p="l-10vw">
-        <slot />
-      </div>
+    <div class="z--1 absolute w-98vw h-screen">
+      <canvas id="el" ref="el" class="absolute"></canvas>
+      <canvas id="el2" ref="el2" class="absolute"></canvas>
     </div>
-    <AppFooter h="5vh" />
+    <div>
+      <AppHeader h="6vh" z="2" />
+      <div p="t-8vh l-50px r-50px b-8vh" min-h="83vh" class="flex" flex="row">
+        <Aside w="10vw" />
+        <div p="l-10vw">
+          <slot />
+        </div>
+      </div>
+      <AppFooter h="5vh" />
+    </div>
   </div>
 </template>

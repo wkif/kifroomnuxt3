@@ -25,6 +25,13 @@ class Plum {
     this.ctx.strokeStyle = color
   }
 
+  private drawBranch(l: Line) {
+    const { start } = l
+    const end = this.getEndPoint(l)
+    this.lineTo(start, end)
+  }
+
+
   private getEndPoint(l: Line): Point {
     const { start, length, theta } = l
     return {
@@ -32,13 +39,6 @@ class Plum {
       y: start.y + length * Math.sin(theta)
     }
   }
-
-  private drawBranch(l: Line) {
-    const { start } = l
-    const end = this.getEndPoint(l)
-    this.lineTo(start, end)
-  }
-
   private step(branch: Line, depth = 0) {
     const end = this.getEndPoint(branch)
     this.drawBranch(branch)

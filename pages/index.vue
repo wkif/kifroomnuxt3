@@ -31,42 +31,47 @@ function changePage(e: number) {
 </script>
 
 <template>
-  <div m="t-100px">
-    <h1 class="wobble-hor-bottom">👋 Welcome to {{ blogname }}</h1>
-    {{ welcome }}
-  </div>
-  <div m="t-100px">
-    <ContentList v-slot="{ list }" :query="query">
-      <div>
-        <div
-          v-for="article in list.slice(prev, next)"
-          :key="article._path"
-          class="slide-in-elliptic-top-fwd"
-          p="10px"
-          w="70%"
-          m="l-10%"
-        >
-          <NuxtLink :to="article._path" hover="text-#43b244">
-            <h2>{{ article.title }}</h2></NuxtLink
+  <div>
+    <div m="t-100px">
+      <h1 class="wobble-hor-bottom">👋 Welcome to {{ blogname }}</h1>
+      {{ welcome }}
+    </div>
+    <div m="t-100px">
+      <ContentList v-slot="{ list }" :query="query">
+        <div>
+          <div
+            v-for="article in list.slice(prev, next)"
+            :key="article._path"
+            class="slide-in-elliptic-top-fwd"
+            p="10px"
+            w="70%"
+            m="l-10%"
           >
-          <div w="30%" h="1px" bg="#000000"></div>
-          <p>{{ article.description }}</p>
-          <p text="right">{{ article.date }}</p>
-          
+            <NuxtLink :to="article._path" hover="text-#43b244">
+              <h2>{{ article.title }}</h2></NuxtLink
+            >
+            <div w="30%" h="1px" bg="#000000"></div>
+            <p>{{ article.description }}</p>
+            <p text="right">{{ article.date }}</p>
+          </div>
         </div>
-      </div>
 
-      <div class="flex" flex="items-center">
-        共
-        <p id="length">{{ list.length }}</p>
-        篇文章
-      </div>
-    </ContentList>
-    <BackTop />
+        <div class="flex" flex="items-center">
+          共
+          <p id="length">{{ list.length }}</p>
+          篇文章
+        </div>
+      </ContentList>
+      <BackTop />
 
-    <div class="flex" flex="items-center justify-between" p="20px" text="30px" w="30%">
-      <div v-show="page !== 1" class="i-mdi-arrow-left-thick" @click="changePage(-1)"></div>
-      <div v-show="page !== totalPage" class="i-mdi-arrow-right-thick" @click="changePage(1)"></div>
+      <div class="flex" flex="items-center justify-between" p="20px" text="30px" w="30%">
+        <div v-show="page !== 1" class="i-mdi-arrow-left-thick" @click="changePage(-1)"></div>
+        <div
+          v-show="page !== totalPage"
+          class="i-mdi-arrow-right-thick"
+          @click="changePage(1)"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
