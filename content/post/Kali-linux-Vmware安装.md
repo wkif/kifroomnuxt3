@@ -1,12 +1,15 @@
+---
 title: Kali linux Vmware安装
 author: kif
 tags:
   - kali
   - linux
 categories:
-  - 学习笔记
-abbrlink: 56b3
+  - 工具
+abbrlink: 9aee
+cover: "https://kifimg.oss-cn-beijing.aliyuncs.com/img/202304191059908.png"
 date: 2020-12-05 21:20:00
+
 ---
 
 ## 一、kalilinux下载

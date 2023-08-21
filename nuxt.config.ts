@@ -1,8 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
-  app:{
-     pageTransition: { name: 'page', mode: 'out-in' }
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
   modules: ['@unocss/nuxt', '@nuxt/content'],
   unocss: {
@@ -11,9 +11,15 @@ export default defineNuxtConfig({
     icons: true,
     attributify: true,
     shortcuts: {},
-    rules: []
+    rules: [
+      [
+        'transform-center', {
+          transform: 'translate(-50%, -50%)'
+        }
+      ]
+    ]
   },
-  css: ['~/assets/css/index.css', '~/assets/css/font.css', '~/assets/css/animista.css'],
+  css: ['~/assets/css/index.less', '~/assets/css/font.css', '~/assets/css/animista.css'],
   content: {
     // https://content.nuxtjs.org/api/configuration
     documentDriven: true,

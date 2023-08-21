@@ -1,5 +1,5 @@
 ---
-title: C语言思维导图
+title: C语言思维导图 C language mind map
 author: kif
 tags:
   - C语言

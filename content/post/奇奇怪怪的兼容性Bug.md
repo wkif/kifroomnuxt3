@@ -95,6 +95,231 @@ fetch('/api', {
 
 
 
+## ios及部分安卓浏览器引入unocss报错导致首屏白屏
+
+
+
+先说问题原因：
+
+浏览器内核不支持 toplevel await, 解决办法参看pr （https://github.com/unocss/unocss/pull/2066）
+
+
+
+vite.config.ts 中配置 hmrTopLevelAwait 为false
+
+```
+UnoCSS({
+     hmrTopLevelAwait: false,
+})
+```
+
+
+
+在unocss源码中 packages\vite\src\modes\global\dev.ts，
+
+ 
+
+```
+let hmr = `
+try {
+ let hash = __vite__css.match(/__uno_hash_(\\w{${HASH_LENGTH}})/)
+ hash = hash && hash[1]
+ if (!hash)
+  console.warn('[unocss-hmr]', 'failed to get unocss hash, hmr might not work kif')
+ else
+  await import.meta.hot.send('${WS_EVENT_PREFIX}', ['${layer}', hash]);
+} catch (e) {
+ console.warn('[unocss-hmr]', e)
+}
+if (!import.meta.url.includes('?'))
+ await new Promise(resolve => setTimeout(resolve, 100))`
+
+
+
+const config = await getConfig() as VitePluginConfig
+
+if (config.hmrTopLevelAwait === false)
+	hmr = `;(async function() {${hmr}\n})()`
+hmr = `\nif (import.meta.hot) {${hmr}}`
+
+const s = new MagicString(code)
+s.append(hmr)
+
+
+```
+
+通过 config.hmrTopLevelAwait 判断是否支持 顶级await，向上找发现此项是UnoCSS 的手动配置项
+
+
+
+## ios端 Unexpected token '='. Expected an opening '(' before a method's parameter list
+
+问题出在项目中Axios封装：
+
+```ts
+import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosError } from "axios";
+import { ApiDataResponse } from "#/axios";
+import Axios from "axios";
+import { Toast } from "vant";
+import { whiteCodes } from "./codes";
+
+Axios.defaults.withCredentials = true;
+
+const defaultConfig: AxiosRequestConfig = {
+  baseURL: "",
+  timeout: 1000 * 30,
+};
+class Request {
+  private axiosInstance: AxiosInstance;
+  constructor() {
+    this.axiosInstance = Axios.create(defaultConfig);
+    this.httpInterceptorsRequest();
+    this.httpInterceptorsResponse();
+ }
+  /**
+   * @description 请求拦截器
+   */
+  private httpInterceptorsRequest(): void {
+    this.axiosInstance.interceptors.request.use(
+     (config: AxiosRequestConfig) => {
+        // 添加逻辑
+        return config;
+     },
+     (error: AxiosError): Promise<any> => {
+        return Promise.reject(error);
+     },
+   );
+ }
+  /**
+   * @description 响应拦截器
+   */
+  private httpInterceptorsResponse(): void {
+    this.axiosInstance.interceptors.response.use(
+     (response: AxiosResponse) => {
+        if (response.headers.hxe_auth) {
+          response.data.data.userToken = response.headers.hxe_auth;
+       }
+        this.responseHandle(response);
+        return response;
+     },
+     (error: AxiosError): Promise<any> => {
+        const { response, message } = error;
+        if (response) {
+          this.responseHandle(response, message);
+       } else {
+          const message = error.message.includes("timeout")
+            ? "请求超时！请检查网络是否正常"
+           : "请求失败，请检查网络是否已连接";
+          Toast.fail(message);
+       }
+        return Promise.reject(error);
+     },
+   );
+ }
+  request<T = any, U = any>(config: AxiosRequestConfig): Promise<ApiDataResponse<T> | U> {
+    return new Promise((resolve, reject) => {
+      this.axiosInstance(config)
+       .then((res: AxiosResponse) => {
+          resolve(res.data);
+       })
+       .catch((err: Error | AxiosError) => {
+          reject(err);
+       });
+   });
+ }
+
+  /**
+   * @description 错误码处理
+   * @param { Object } response 响应结果
+   */
+  private responseHandle(response: AxiosResponse, message?: string): void {
+    switch (response.status) {
+      case 401:
+      case 403:
+        console.log("需要登录");
+        break;
+      case 404:
+        Toast.fail("请求资源不存在");
+        break;
+      case 200:
+        if (response.config.responseType === "blob") {
+          return;
+       }
+        const code = response.data?.code;
+        if (code !== 0 && !Object.keys(whiteCodes).includes(String(code))) {
+          Toast.fail(response.data?.message ?? response.data?.msg ?? "出错了");
+       }
+        break;
+      default:
+        Toast.fail(response.data?.message ?? message ?? "未知错误");
+        break;
+   }
+ }
+}
+
+export const http = new Request();
+```
+
+
+
+`private axiosInstance: AxiosInstance` 使用了 公有字段声明[Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#field_declarations)，例子如下：
+
+```
+class Account {
+ accountFields = ['field1', 'field2', 'field3']
+}
+```
+
+其兼容性如下：
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#browser_compatibility
+
+bug记录：
+
+https://bugs.webkit.org/show_bug.cgi?id=194095
+
+
+
+It's currently [supported](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Public_class_fields#browser_compatibility) by most modern browsers. However, **the only Safari versions that support this feature are v14.1** (released April 26th, 2021) and higher. If you need to support older versions of Safari / a wider variety of older browsers you'll need to follow one of the suggestions below.
+
+Instead of using public field declarations, you can use a [constructor() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Constructor) to define the properties for your class instances. Using a constructor does have [good browser compatibility](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Browser_compatibility) (for IE support you can use a [constructor function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new#description)):
+
+```
+class Account {
+  constructor() {
+    this.accountFields = ['field1', 'field2', 'field3'];
+ }
+}
+```
+
+As pointed out in the comments by [@Baz](https://stackoverflow.com/users/1062794/baz), you can also use Babel as an alternative solution. Using babel means that you won't have to change your code, which can make things easier on you if you're using public field declarations a lot throughout your project. Babel will transpile/compile your modern JS code into older (ES5 and below) JS code which can be understood by many browsers. You can use [this](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties) babel plugin like so.
+
+First, install the babel plugin:
+
+```
+npm install --save-dev @babel/plugin-proposal-class-properties
+```
+
+Then add the plugin to your configuration file:
+
+```
+{
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+}
+```
+
+For other installation options (babel CLI, etc), see the [usage section](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties#usage) of the plugin's docs.
+
+
+
+
+
+> https://stackoverflow.com/questions/60026651/safari-unexpected-token-expected-an-opening-before-a-methods-paramet
+
+
+
+
+
 待續......
 
 

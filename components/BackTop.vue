@@ -47,11 +47,15 @@ onUnmounted(() => {
     w="2rem"
     h="2rem"
     p="0.5rem"
-    bg="#2c3e50"
-    @click="handleScrollTop"
+    bg="#e1c857"
     rounded="50%"
+    cursor="pointer"
+    transition="all 0.3s ease-in-out"
+    hover="bg-#43b244"
+    color="#ffffff"
+    @click="handleScrollTop"
   >
-    <div class="i-mdi-arrow-expand-up" text="2rem" leading="2rem"></div>
+    <div class="i-mdi-arrow-up" text="2rem" leading="2rem"></div>
   </div>
 </template>
 

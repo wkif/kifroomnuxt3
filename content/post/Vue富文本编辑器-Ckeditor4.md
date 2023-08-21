@@ -21,64 +21,26 @@ link: https://ckeditor.com/ckeditor-4/download/
 
 
 ![image-20221202144002932](https://kifimg.oss-cn-beijing.aliyuncs.com/img/202212021440600.png)
-
-
-
-下载好后解压,
-
-
-
+ 下载好后解压,
 ![image-20221202143929813](https://kifimg.oss-cn-beijing.aliyuncs.com/img/202212021439837.png)
-
-
-
-打开index,
-
-
-
+ 打开index,
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190109103910244.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk5MjEwOQ==,size_16,color_FFFFFF,t_70)
-
-
-
  打开后就是配置界面
-
-
-
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190109104019725.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk5MjEwOQ==,size_16,color_FFFFFF,t_70)
-
-
-
-在这里进行增删移动，看自己需求,调整好后
-
+ 在这里进行增删移动，看自己需求,调整好后
  ![在这里插入图片描述](https://img-blog.csdnimg.cn/20190109104140556.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80Mjk5MjEwOQ==,size_16,color_FFFFFF,t_70)
-
-
-
  这里就是配置文件了，复制
-
-
-
-
 
 ## 导入
 
 将整个目录放在你的项目下
-
-
-
  ![image-20221202143929813](https://kifimg.oss-cn-beijing.aliyuncs.com/img/202212021439837.png)
-
-
-
-在需要用到的地方引用
-
-
+ 在需要用到的地方引用
 
 ![image-20221202144133642](https://kifimg.oss-cn-beijing.aliyuncs.com/img/202212021441745.png)
 
 ```
-
-<script src="../static/ckeditor/ckeditor.js"></script>
+ <script src="../static/ckeditor/ckeditor.js"></script>
 ```
 
 > vue主要在index.html

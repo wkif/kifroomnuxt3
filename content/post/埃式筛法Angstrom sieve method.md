@@ -1,5 +1,5 @@
 ---
-title: 埃式筛法
+title: 埃式筛法 
 author: kif
 tags:
   - C语言

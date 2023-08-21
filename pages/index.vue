@@ -33,7 +33,7 @@ function changePage(e: number) {
 <template>
   <div>
     <div m="t-100px">
-      <h1 class="wobble-hor-bottom">👋 Welcome to {{ blogname }}</h1>
+      <h1>👋 Welcome to {{ blogname }}</h1>
       {{ welcome }}
     </div>
     <div m="t-100px">

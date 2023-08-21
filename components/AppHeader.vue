@@ -5,8 +5,9 @@
     <div class="flex" w="30%" p="l-2rem" h="100%" right="60px" flex="items-center justify-between">
       <NuxtLink to="/">Home</NuxtLink>
       <NuxtLink to="/about">About</NuxtLink>
-      <NuxtLink to="/project">Project</NuxtLink>
+      <!-- <NuxtLink to="/project">Project</NuxtLink> -->
       <NuxtLink to="/link">Link</NuxtLink>
+      <NuxtLink to="/saying">Saying</NuxtLink>
 
     </div>
     <Darkmode right="0" />

@@ -1,10 +1,16 @@
-title: shmily
-abbrlink: 984a
-tags: []
-categories: []
-author: kif
-date: 2020-07-13 00:00:00
 ---
+title: shmily
+author: kif
+abbrlink: 9aee
+cover: "https://kifimg.oss-cn-beijing.aliyuncs.com/img/202301261903204.png"
+date: 2020-07-13 00:00:00
+
+
+
+---
+
+
+
 shmily
 Sometimes some little things can teach us a lot.
 

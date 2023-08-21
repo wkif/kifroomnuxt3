@@ -2,16 +2,15 @@
 title: lerna+yarn workspace+monorepo项目的最佳实践
 author: kif
 tags:
+  - lerna
   - monorepo
-  - workspace
 categories:
   - 开发笔记
-abbrlink: f788
+abbrlink: 9aee
+cover: "https://kifimg.oss-cn-beijing.aliyuncs.com/img/202301261903204.png"
 date: 2023-01-26 19:01:00
-cover: 'https://kifimg.oss-cn-beijing.aliyuncs.com/img/202301261903204.png'
-coverWidth: 1200
-coverHeight: 750
-top: true
+
+
 ---
 
 # 1.monorepo 管理
