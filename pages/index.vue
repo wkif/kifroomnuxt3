@@ -28,10 +28,32 @@ function changePage(e: number) {
   prev.value = (page.value - 1) * pageSize.value
   next.value = page.value * pageSize.value
 }
+
+const terminal = ref(false)
+
+function term() {
+  window.onkeydown = function (event) {
+    // event.preventDefault()
+    if (event.ctrlKey && event.keyCode === 77) {
+      terminal.value = !terminal.value
+      if (terminal.value) {
+        document.body.style.overflow = 'hidden'
+      } else {
+        document.body.style.overflow = 'auto'
+      }
+    }
+  }
+}
+onMounted(() => {
+  if (process.client) {
+    term()
+  }
+})
 </script>
 
 <template>
   <div>
+    <Terminal v-show="terminal" />
     <div m="t-100px">
       <h1>👋 Welcome to {{ blogname }}</h1>
       {{ welcome }}
