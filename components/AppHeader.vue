@@ -8,7 +8,7 @@
       <!-- <NuxtLink to="/project">Project</NuxtLink> -->
       <NuxtLink to="/link">Link</NuxtLink>
       <NuxtLink to="/saying">Saying</NuxtLink>
-
+      <NuxtLink to="/travel">Travel</NuxtLink>
     </div>
     <Darkmode right="0" />
   </div>

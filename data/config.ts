@@ -2,6 +2,7 @@ import bookshelfList from './bookshelfData'
 import filmList from './filmData'
 import linkData from './link'
 import SayingData from './sayingData'
+import travelData from './travelData'
 
 const socialLink = {
   github: "https://github.com/wkif",
@@ -22,4 +23,4 @@ const valineConfig = {
   placeholder: '说说你想法'
 }
 
-export { socialLink, name, valineConfig, blogname, welcome, bookshelfList, filmList, linkData, SayingData }
+export { socialLink, name, valineConfig, blogname, welcome, bookshelfList, filmList, linkData, SayingData, travelData }

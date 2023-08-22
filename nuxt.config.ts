@@ -4,9 +4,12 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
-      // script: [
-      //   { src: './assets/icon/iconfont.js', type: 'text/javascript' },
-      // ],
+      script: [
+        {
+          src: 'https://webapi.amap.com/maps?v=2.0&key=8f0886bdea254dc94628be87db49bba9',
+          type: 'text/javascript'
+        }
+      ],
       // link: [
       //   { rel: 'stylesheet', href: "./assets/icon/iconfont.css" },
       // ],
