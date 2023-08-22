@@ -2,7 +2,16 @@
 export default defineNuxtConfig({
 
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      // script: [
+      //   { src: './assets/icon/iconfont.js', type: 'text/javascript' },
+      // ],
+      // link: [
+      //   { rel: 'stylesheet', href: "./assets/icon/iconfont.css" },
+      // ],
+    }
+
   },
   modules: ['@unocss/nuxt', '@nuxt/content'],
   unocss: {
@@ -24,7 +33,7 @@ export default defineNuxtConfig({
       ]
     ]
   },
-  css: ['~/assets/css/index.less', '~/assets/css/font.css', '~/assets/css/animista.css'],
+  css: ['~/assets/css/index.less', '~/assets/css/font.css', '~/assets/css/animista.css', '~/assets/icon/iconfont.css'],
   content: {
     // https://content.nuxtjs.org/api/configuration
     documentDriven: true,
@@ -41,6 +50,6 @@ export default defineNuxtConfig({
     }
   },
   // plugins: [
-  //   { src: '~/plugins/nprogress.ts', mode: 'client' }
+  //   { src: './assets/icon/iconfont.js', ssr: false }
   // ]
 })

@@ -3,6 +3,10 @@ import Ls from './ls.vue'
 import Help from './help.vue'
 import About from './termabout.vue'
 
+const props = defineProps({
+  show: Boolean
+})
+
 interface HistoryType {
   id: number
   command: string
@@ -11,7 +15,7 @@ interface HistoryType {
 const history = ref<HistoryType[]>([
   {
     id: 1,
-    command: 'ls',
+    command: 'help',
     time: '2021-10-10 10:10:10'
   }
 ])
@@ -30,7 +34,7 @@ function getTime() {
 function enter(e: any) {
   console.log('e', e.target.value)
   const value = e.target.value
-  if (value === 'ls') {
+  if (value === 'ls' || value === 'list') {
     history.value.push({
       id: history.value.length + 1,
       command: 'ls',
@@ -55,17 +59,29 @@ function enter(e: any) {
       time: time.value
     })
   }
+  document.getElementById('input')!.value = ''
 }
 onMounted(() => {
   type.value = getBrowserType()
   getTime()
 })
+watch(
+  () => props.show,
+  (val) => {
+    if (val && process.client) {
+      const input = document.getElementById('input')
+      console.log('input', input)
+      input?.focus()
+    }
+  }
+)
 </script>
 
 <template>
   <div
+    v-show="props.show"
     class="terminal transform-center box-shadow-term bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800"
-    absolute
+    fixed
     top="50%"
     left="50%"
     h="50%"
@@ -77,15 +93,28 @@ onMounted(() => {
       <!-- <img src="../assets/image/ico.png" h-2rem w-2rem alt="" srcset="" /> -->
       kifroom shell
     </div>
-    <div p-1rem>
+    <div p-1rem overflow-auto h="80%">
       kifroom shell v1.0.0
       <div v-for="item in history" :key="item.id">
         <div flex items-center justify-between rounded-10px>
           <div flex items-center>
-            <div bg="#077ac3" p-1px>>_ pwsh</div>
-            <div p-1px p-l-0.5rem bg="#ff9248">{{ type }}</div>
+            <div bg="#077ac3" p-1px p-r-0.5rem>>_ pwsh</div>
+            <div p-1px p-l-0.5rem p-r-0.5rem bg="#ff9248">
+              <i v-if="type === 'Chrome'" class="iconfont icon-chrome"></i>
+              <i v-if="type === 'Edge'" class="iconfont icon-changyonglogo46"></i>
+              <i v-if="type === 'Firefox'" class="iconfont icon-firefox"></i>
+              <i v-if="type === 'Safari'" class="iconfont icon-Safariliulanqi"></i>
+              {{ type }}
+            </div>
+            <div bg="#41b883" p-1px p-r-0.5rem>
+              <i class="iconfont icon-nuxt"></i>
+              Nuxt@3.4.1
+            </div>
           </div>
-          <div flex items-center p-1px bg="#40c4ff">{{ item.time }}</div>
+          <div flex items-center p-1px bg="#40c4ff">
+            <i class="iconfont icon-Field-time"></i>
+            {{ item.time }}
+          </div>
         </div>
         <div flex items-center>
           <div m-r-1rem>->></div>
@@ -101,14 +130,29 @@ onMounted(() => {
       <div>
         <div flex items-center justify-between rounded-10px>
           <div flex items-center>
-            <div bg="#077ac3" p-1px>>_ pwsh</div>
-            <div p-1px p-l-0.5rem bg="#ff9248">{{ type }}</div>
+            <div bg="#077ac3" p-1px p-r-0.5rem>>_ pwsh</div>
+            <div p-1px p-l-0.5rem p-r-0.5rem bg="#ff9248">
+              <i v-if="type === 'Chrome'" class="iconfont icon-chrome"></i>
+              <i v-if="type === 'Edge'" class="iconfont icon-changyonglogo46"></i>
+              <i v-if="type === 'Firefox'" class="iconfont icon-firefox"></i>
+              <i v-if="type === 'Safari'" class="iconfont icon-Safariliulanqi"></i>
+              {{ type }}
+            </div>
+            <div bg="#41b883" p-1px p-r-0.5rem>
+              <i class="iconfont icon-nuxt"></i>
+              Nuxt@3.4.1
+            </div>
           </div>
-          <div flex items-center p-1px bg="#40c4ff">{{ time }}</div>
+          <div flex items-center p-1px bg="#40c4ff">
+            <i class="iconfont icon-Field-time"></i>
+            {{ time }}
+            <!-- <i class="iconfont icon-Field-time"></i>{{ time }} -->
+          </div>
         </div>
         <div flex items-center>
           <div m-r-1rem flex w-2rem items-center>->></div>
           <input
+            id="input"
             w="100%"
             h-2rem
             class="bg-transparent text-gray-100 dark:text-gray-800 outline-none"

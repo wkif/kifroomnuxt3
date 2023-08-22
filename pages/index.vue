@@ -31,29 +31,23 @@ function changePage(e: number) {
 
 const terminal = ref(false)
 
-function term() {
+if (process.client) {
   window.onkeydown = function (event) {
-    // event.preventDefault()
     if (event.ctrlKey && event.keyCode === 77) {
-      terminal.value = !terminal.value
+      console.log('terminal.value', terminal.value)
       if (terminal.value) {
-        document.body.style.overflow = 'hidden'
+        terminal.value = false
       } else {
-        document.body.style.overflow = 'auto'
+        terminal.value = true
       }
     }
   }
 }
-onMounted(() => {
-  if (process.client) {
-    term()
-  }
-})
 </script>
 
 <template>
   <div>
-    <Terminal v-show="terminal" />
+    <Terminal :show="terminal" />
     <div m="t-100px">
       <h1>👋 Welcome to {{ blogname }}</h1>
       {{ welcome }}

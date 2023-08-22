@@ -1,0 +1,51 @@
+{
+  "id": "4219580",
+  "name": "kifroomnuxt3",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "9229178",
+      "name": "Field-time",
+      "font_class": "Field-time",
+      "unicode": "e90e",
+      "unicode_decimal": 59662
+    },
+    {
+      "icon_id": "13303949",
+      "name": "nuxt",
+      "font_class": "nuxt",
+      "unicode": "e686",
+      "unicode_decimal": 59014
+    },
+    {
+      "icon_id": "1006043",
+      "name": "Edge",
+      "font_class": "changyonglogo46",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "11983530",
+      "name": "chrome",
+      "font_class": "chrome",
+      "unicode": "ea09",
+      "unicode_decimal": 59913
+    },
+    {
+      "icon_id": "13253846",
+      "name": "firefox",
+      "font_class": "firefox",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "34065043",
+      "name": "Safari浏览器",
+      "font_class": "Safariliulanqi",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    }
+  ]
+}
