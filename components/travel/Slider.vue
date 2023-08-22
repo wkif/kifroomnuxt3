@@ -5,6 +5,8 @@ let count = 0
 let items = ''
 let itemCount = 0
 function showNextItem() {
+  items = document.querySelectorAll('.slider-item')
+  itemCount = items.length
   items[count].classList.remove('active')
 
   if (count < itemCount - 1) {
@@ -18,6 +20,8 @@ function showNextItem() {
 }
 
 function showPreviousItem() {
+  items = document.querySelectorAll('.slider-item')
+  itemCount = items.length
   items[count].classList.remove('active')
 
   if (count > 0) {
@@ -39,8 +43,6 @@ function keyPress(e) {
   }
 }
 if (process.client) {
-  items = document.querySelectorAll('.slider-item')
-  itemCount = items.length
   document.addEventListener('keydown', keyPress)
 }
 </script>

@@ -62,7 +62,7 @@ const travelData: TravelDataType[] = [
     desc: "雨崩",
     img: 'https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202308221553730.jpg',
     path: '/travel/yubeng',
-    type: 'md'
+    type: 'vue'
   }
 ]
 export default travelData
