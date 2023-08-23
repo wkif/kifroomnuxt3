@@ -2,7 +2,6 @@
 
 <template>
   <div>
-    wugongshan vue
     <div class="main-content">
       <div class="navigation">Pies from the waitress musical</div>
       <div class="pie-image"></div>

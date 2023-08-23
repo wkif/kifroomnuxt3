@@ -23,4 +23,5 @@ const valineConfig = {
   placeholder: '说说你想法'
 }
 
-export { socialLink, name, valineConfig, blogname, welcome, bookshelfList, filmList, linkData, SayingData, travelData }
+const key ='1abf17fcdf2fc58bcf8e8b303a9cda2f'
+export { socialLink, name, valineConfig, blogname, welcome, bookshelfList, filmList, linkData, SayingData, travelData, key }

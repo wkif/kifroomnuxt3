@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { travelData } from '@/data/config'
 
+const emits = defineEmits(['getLocation'])
+
 let count = 0
-let items = ''
 let itemCount = 0
+function getLocation(index = 0) {
+  const item = travelData[index]
+  const { city } = item
+  emits('getLocation', city)
+}
 function showNextItem() {
-  items = document.querySelectorAll('.slider-item')
+  const items = document.querySelectorAll('.slider-item')
   itemCount = items.length
   items[count].classList.remove('active')
 
@@ -14,13 +20,14 @@ function showNextItem() {
   } else {
     count = 0
   }
+  getLocation(count)
 
   items[count].classList.add('active')
   console.log(count)
 }
 
 function showPreviousItem() {
-  items = document.querySelectorAll('.slider-item')
+  const items = document.querySelectorAll('.slider-item')
   itemCount = items.length
   items[count].classList.remove('active')
 
@@ -29,22 +36,25 @@ function showPreviousItem() {
   } else {
     count = itemCount - 1
   }
-
+  getLocation(count)
   items[count].classList.add('active')
 }
 
-function keyPress(e) {
+function keyPress(e: KeyboardEvent) {
   e = e || window.event
 
-  if (e.keyCode === '37') {
+  if (e.keyCode.toString() === '37') {
     showPreviousItem()
-  } else if (e.keyCode === '39') {
+  } else if (e.keyCode.toString() === '39') {
     showNextItem()
   }
 }
 if (process.client) {
   document.addEventListener('keydown', keyPress)
 }
+onMounted(() => {
+  getLocation()
+})
 </script>
 
 <template>
