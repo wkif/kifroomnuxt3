@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
-import { blogname, welcome } from '@/data/config'
+import { blogname } from '@/data/config'
+
 
 const query: QueryBuilderParams = { path: '/post', sort: [{ date: -1 }] }
 const length = ref(0)
@@ -50,7 +51,7 @@ if (process.client) {
     <Terminal :show="terminal" />
     <div m="t-100px">
       <h1>👋 Welcome to {{ blogname }}</h1>
-      {{ welcome }}
+      {{ $t('welcome') }}
     </div>
     <div m="t-100px">
       <ContentList v-slot="{ list }" :query="query">

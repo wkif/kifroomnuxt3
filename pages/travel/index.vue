@@ -5,8 +5,15 @@ const map = shallowRef<AMap.Map>()
 function initMap() {
   map.value = new AMap.Map('map', {
     viewMode: '3D', // 是否为3D地图模式
+    pitch: 75,
     zoom: 10, // 初始化地图级别
-    center: [113.868293, 27.637853]
+    center: [113.868293, 27.637853],
+    layers: [
+      // 使用多个图层
+      new AMap.TileLayer.Satellite(),
+      new AMap.TileLayer.RoadNet()
+    ],
+    zooms: [4, 18] // 设置地图级别范围
   })
   // 添加插件
   AMap.plugin(['AMap.ToolBar', 'AMap.Scale', 'AMap.HawkEye'], () => {
@@ -50,9 +57,7 @@ onMounted(() => {
 
 <template>
   <div m-t-4rem>
-    <div class="text" text-left text-1rem>
-      肉体和灵魂，总有一个需要在路上。
-    </div>
+    <div class="text" text-left text-1rem>肉体和灵魂，总有一个需要在路上。</div>
     <div flex items-center>
       <!-- <div id="container" w-50vw h-50vh p-1rem m-1rem></div> -->
       <div class="border">

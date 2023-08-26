@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     }
 
   },
-  modules: ['@unocss/nuxt', '@nuxt/content'],
+  modules: ['@unocss/nuxt', '@nuxt/content', '@nuxtjs/i18n'],
   unocss: {
     // icon: https://icones.js.org/   interactive: https://unocss.dev/interactive/
     uno: true,
@@ -52,6 +52,9 @@ export default defineNuxtConfig({
       preload: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml']
     }
   },
+  i18n: {
+    vueI18n: './i18n.config.ts' // if you are using custom path, default 
+  }
   // plugins: [
   //   { src: './assets/icon/iconfont.js', ssr: false }
   // ]
