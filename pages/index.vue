@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+// import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 import { blogname } from '@/data/config'
 
+// 导入json文件
+import data from '@/data/path.json'
 
-const query: QueryBuilderParams = { path: '/post', sort: [{ date: -1 }] }
+const router = useRouter()
+// const query: QueryBuilderParams = { path: '/post', sort: [{ date: -1 }] }
 const length = ref(0)
 if (process.client) {
   length.value = Number(document.getElementById('length')?.innerHTML)
@@ -44,6 +47,11 @@ if (process.client) {
     }
   }
 }
+
+const postList = ref([...data])
+function goto (path: string) {
+  router.push(`/detail?path=${path}`)
+}
 </script>
 
 <template>
@@ -54,7 +62,27 @@ if (process.client) {
       {{ $t('welcome') }}
     </div>
     <div m="t-100px">
-      <ContentList v-slot="{ list }" :query="query">
+      <div v-for="article in postList" :key="article.path">
+        <!-- <a :href="article.path" hover="text-#43b244">
+          <h2>{{ article.name }}</h2>
+        </a> -->
+        <div @click="goto(article.path)">
+          <h2>{{ article.name }}</h2>
+        </div>
+      </div>
+      <div>{{ postList }}</div>
+      <!-- <main>
+        <ContentList path="/post" v-slot="{ list }">
+          <div v-for="article in list" :key="article._path">
+            <h2>{{ article.title }}</h2>
+            {{ article._path }}
+            <NuxtLink :to="article._path" hover="text-#43b244">
+              <h2>{{ article.title }}</h2>
+            </NuxtLink>
+          </div>
+        </ContentList>
+      </main> -->
+      <!-- <ContentList v-slot="{ list }" :query="query">
         <div>
           <div
             v-for="article in list.slice(prev, next)"
@@ -78,7 +106,7 @@ if (process.client) {
           <p id="length">{{ list.length }}</p>
           篇文章
         </div>
-      </ContentList>
+      </ContentList> -->
       <BackTop />
 
       <div class="flex" flex="items-center justify-between" p="20px" text="30px" w="30%">
