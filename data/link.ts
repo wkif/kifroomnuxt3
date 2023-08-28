@@ -24,7 +24,7 @@ const linkData: {
     },
     {
       name: 'ASC_8384',
-      url: 'https://xtuly.cn/',
+      url: 'https://www.asc8384.top/',
       img: 'https://avatars.githubusercontent.com/u/29878345?v=4',
       desc: '心中无一物，何处惹尘埃。',
     },
@@ -45,6 +45,11 @@ const linkData: {
       url: 'https://ahzoo.cn/',
       img: 'https://ahzoo.cn/img/avatar.jpg',
       desc: '每天进步多一点',
+    }, {
+      name: '徐乔年',
+      url: 'https://hsuqnian.top/',
+      img: 'https://hsuqnian.top/picture.png',
+      desc: '不惊、不惑、不扰。',
     },
   ],
   myLink: {

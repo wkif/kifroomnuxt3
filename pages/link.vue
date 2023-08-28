@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { linkData } from '@/data/config'
+
+function goto(url: string) {
+  window.open(url)
+}
 </script>
 
 <template>
