@@ -12,7 +12,7 @@ function changedocShow() {
       <div m="b-50px t-50px">
         <NuxtLink to="/"><div class="i-mdi-keyboard-return" text="39px"></div></NuxtLink>
       </div>
-      <h1 m="b-50px t-50px">{{ page.title }}</h1>
+      <!-- <h1 m="b-50px t-50px">{{ page.title }}</h1> -->
       <div class="flex" w="80vw">
         <ContentRenderer :key="page._id" w="60vw" :value="page" />
         <div

@@ -13,7 +13,7 @@ abbrlink: 2b51
 date: 2022-12-06 00:28:00
 ---
 
-
+# 奇奇怪怪的兼容性Bug
 
 ## IOS 不支持this.$router.go
 
