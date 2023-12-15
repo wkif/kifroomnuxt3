@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { valineConfig } from '@/data/config'
+import { valineConfig } from '@/site.config'
 
 onMounted(() => {
   import('valine').then((res) => {
@@ -10,5 +10,5 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="valineBox" w="80%" m="t-20px"></div>
+  <div id="valineBox" w="100%" m="t-20px"></div>
 </template>

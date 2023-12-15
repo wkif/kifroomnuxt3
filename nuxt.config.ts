@@ -1,35 +1,72 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+import { siteConfig } from './site.config'
 
-  app:{
-     pageTransition: { name: 'page', mode: 'out-in' }
+export default defineNuxtConfig({
+  modules: [
+    '@unocss/nuxt',
+    '@vueuse/nuxt',
+    '@nuxt/content',
+  ],
+
+  app: {
+    rootId: 'nuxt-root',
+    head: {
+      meta: [
+        { name: 'description', content: siteConfig.description },
+        { name: 'author', content: siteConfig.author },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1.0' },
+        { name: 'revisit-after', content: '7 days' },
+        { name: 'msapplication-TileColor', content: '#ffffff' },
+        { charset: 'UTF-8' },
+        { 'http-equiv': 'X-UA-Compatible', 'content': 'IE=edge' },
+      ],
+      noscript: [
+        { children: 'JavaScript is required' },
+      ],
+      htmlAttrs: {
+        lang: siteConfig.lang,
+      },
+      bodyAttrs: {
+        class: 'font-sans',
+      },
+    },
   },
-  modules: ['@unocss/nuxt', '@nuxt/content'],
-  unocss: {
-    // icon: https://icones.js.org/   interactive: https://unocss.dev/interactive/
-    uno: true,
-    icons: true,
-    attributify: true,
-    shortcuts: {},
-    rules: []
-  },
-  css: ['~/assets/css/index.css', '~/assets/css/font.css', '~/assets/css/animista.css'],
+
   content: {
-    // https://content.nuxtjs.org/api/configuration
-    documentDriven: true,
     highlight: {
       theme: {
         // Default theme (same as single string)
-        default: 'material-ocean',
+        default: 'one-dark-pro',
         // Theme used if `html.dark`
-        dark: 'material-darker',
+        dark: 'one-dark-pro',
         // Theme used if `html.sepia`
-        sepia: 'monokai'
+        sepia: 'monokai',
       },
-      preload: ['diff', 'json', 'js', 'ts', 'css', 'shell', 'html', 'md', 'yaml']
-    }
+      preload: [
+        'c',
+        'cpp',
+        'java',
+      ],
+
+    },
   },
-  // plugins: [
-  //   { src: '~/plugins/nprogress.ts', mode: 'client' }
-  // ]
+
+  css: [
+    '@unocss/reset/tailwind.css',
+    '@/assets/styles/global.scss',
+    '@/assets/styles/theme.css',
+    '@/assets/styles/transition.css',
+    '@/assets/styles/markdown.scss',
+  ],
+
+  // stylelint: {
+  //   /* module options */
+  //   lintOnStart: false,
+  // },
+
+  devtools: {
+    timeline: {
+      enabled: true,
+    },
+  },
 })
