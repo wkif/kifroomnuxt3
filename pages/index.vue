@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 import { blogname } from '@/data/config'
@@ -54,4 +55,10 @@ if (process.client) {
       <BackTop />
     </div>
   </div>
+=======
+<template>
+  <section class="prose ">
+    <ContentDoc path="me" class="slide-enter-content" />
+  </section>
+>>>>>>> v2.0
 </template>
