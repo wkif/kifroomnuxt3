@@ -2,7 +2,7 @@
 
 <div align="center">
   <br/>
-  <h1>🏳️‍🌈 <b>kif Nuxt 3 Template 🏳️‍🌈</b></h1>
+  <h1>🏳️‍🌈 <b>kifroom 🏳️‍🌈</b></h1>
 </div>
 
 ## 📒 Technology stack
