@@ -1,7 +1,0 @@
-{
-  "extends": ["@antfu", "prettier"],
-  "plugins": ["prettier"],
-  "rules": {
-    "no-console": "off"
-  }
-}
