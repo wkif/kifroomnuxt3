@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { navLinks } from "@/site.config";
-import DarkMode from "@/components/DarkMode";
+import DarkMode from "@/components/Darkmode.vue";
 </script>
 
 <template>
