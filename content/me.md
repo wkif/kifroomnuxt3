@@ -3,19 +3,35 @@
      <img src="https://cdn.jsdelivr.net/gh/MaleWeb/picture/images/techblog/hi.gif" width="25"> <h2>kif</h2>
   
 </div>
-<div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
+  <div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
   <img src="https://img.shields.io/badge/-JavaScript-f6da1c?style=flat&logo=javascript&logoColor=white">
   <img src="https://img.shields.io/badge/-TypeScript-2b6dbf?style=flat&logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/-Python-2b6dbf?style=flat&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/-Python-FFDC52?style=flat&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/-Rust-F3F3F3?style=flat&logo=rust&logoColor=white">
+</div>
+<div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
   <img src="https://img.shields.io/badge/-Vue-46b882?style=flat&logo=vue.js&logoColor=white">
-  <img src="https://img.shields.io/badge/wechat_miniprogram-09b955?style=flat&logo=wechat&logoColor=white">
-  <img src="https://img.shields.io/badge/-less-bf608e?style=flat&logo=less&logoColor=white">
+  <img src="https://img.shields.io/badge/-React-087EA4?style=flat&logo=react&logoColor=white">
+  <img src="https://img.shields.io/badge/-wasm-408e43?style=flat&logo=WebAssembly&logoColor=white">
+  <img src="https://img.shields.io/badge/miniprogram-09b955?style=flat&logo=wechat&logoColor=white">
+  <img src="https://img.shields.io/badge/-Uniapp-bf608e?style=flat&logo=uniapp&logoColor=white">
+  <img src="https://img.shields.io/badge/-Nuxt3-bf608e?style=flat&logo=nuxt.js&logoColor=white">
+  <img src="https://img.shields.io/badge/-Flask-000000?style=flat&logo=flask&logoColor=white">
   <img src="https://img.shields.io/badge/-Django-2b6dbf?style=flat&logo=django&logoColor=white">
+</div>
+<div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
+     <img src="https://img.shields.io/badge/-less-bf608e?style=flat&logo=less&logoColor=white">
+     <img src="https://img.shields.io/badge/-sass-bf608e?style=flat&logo=sass&logoColor=white">
+     <img src="https://img.shields.io/badge/-unoss-bf608e?style=flat&logo=unoss&logoColor=white">
+    <img src="https://img.shields.io/badge/-vite-646CFF?style=flat&logo=vite&logoColor=white">
+    <img src="https://img.shields.io/badge/-Webpack-%232C3A42?style=flat&logo=webpack&logoColor=white">
+  	<img src="https://img.shields.io/badge/-ESLint-%234B32C3?style=flat&logo=eslint&logoColor=white">
+</div>
+<div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
+  <img src="https://img.shields.io/badge/-arch linux-bf608e?style=flat&logo=archlinux&logoColor=white">
   <img src="https://img.shields.io/badge/-Git-ee462c?style=flat&logo=git&logoColor=white">
   <img src="https://img.shields.io/badge/-Nginx-408e43?style=flat&logo=nginx&logoColor=white">
   <img src="https://img.shields.io/badge/-Github-black?style=flat&logo=github">
-   <img src="https://img.shields.io/badge/-Webpack-%232C3A42?style=flat-square&logo=webpack">
-   <img src="https://img.shields.io/badge/-ESLint-%234B32C3?style=flat-square&logo=eslint">
 </div>
 
 <br />
@@ -28,7 +44,7 @@
 - 2022- 2023 Daoyi (Changsha) Information Technology Co. LTD. Front-end intern
 - 2023-to date Beijing Yunda Digital Media Technology Co. LTD. Front-end intern
 
-myBlog：<a href="https://hexo.kifroom.icu/">kifroom</a>
+myBlog：<a href="https://blog.kifroom.icu/">kifroom</a>
 
 - :email: kif101001000@163.com
 - 💬 wechat：rm-rf_kif
@@ -39,13 +55,11 @@ myBlog：<a href="https://hexo.kifroom.icu/">kifroom</a>
 
 # Github status
 
-<img align="" height="137px" src="https://github-readme-stats.vercel.app/api?username=wkif&hide_title=true&hide_border=true&show_icons=true&include_all_commits=true&line_height=21&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=graywhite" /><img align="" height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wkif&hide_title=true&hide_border=true&layout=compact&bg_color=0,73FA79,73FDFF,D783FF&theme=graywhite&locale=cn" />
+<!-- <img align="" height="137px" src="https://github-readme-stats.vercel.app/api?username=wkif&hide_title=true&hide_border=true&show_icons=true&include_all_commits=true&line_height=21&bg_color=0,EC6C6C,FFD479,FFFC79,73FA79&theme=graywhite" />
+<img align="" height="137px" src="https://github-readme-stats.vercel.app/api/top-langs/?username=wkif&hide_title=true&hide_border=true&layout=compact&bg_color=0,73FA79,73FDFF,D783FF&theme=graywhite&locale=cn" /> -->
 
 ![grid snake animation](https://kifimg.oss-cn-beijing.aliyuncs.com/project/github-user-contribution.svg)
 
-<p align="center">
-  <img src="https://visitor-badge.glitch.me/badge?page_id=captain5.captain5" alt="visitor badge"/>
-</p>
 
 <!--START_SECTION:waka-->
 

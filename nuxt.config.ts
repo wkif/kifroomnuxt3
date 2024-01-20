@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   app: {
     rootId: 'nuxt-root',
     head: {
+      title: siteConfig.title,
       meta: [
         { name: 'description', content: siteConfig.description },
         { name: 'author', content: siteConfig.author },
