@@ -4,7 +4,7 @@ url:
 aliases: 
 tags: 
   - 旅游
-title: 夜爬灵山
+title: 夜爬东灵山
 
 
 ---
