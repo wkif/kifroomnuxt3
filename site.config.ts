@@ -100,5 +100,5 @@ export const valineConfig = {
   avatar: 'wavatar',
   visitor: true,
   recordIP: true,
-  placeholder: '说说你想法'
+  placeholder: '我什么都知道，可还是想听你娓娓道来'
 }
