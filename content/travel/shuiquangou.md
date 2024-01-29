@@ -14,6 +14,12 @@ title: 水泉沟+大庄科段长城
 
 全程10公里 左右，爬升300米。
 
+
+
+<iframe height=498 width=100% src="https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202401271841440.mp4"></iframe>
+
+
+
 ![MTXX_MH20240121_215424182](https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202401212221471.jpg)
 
 ![20240121104808_IMG_4726](https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202401212222414.JPG)

@@ -10,7 +10,7 @@ const path = post.join("/");
       <template #default="{ doc }">
         <doc-back />
         <doc-render :article="doc" />
-        <doc-toc :toc="doc.body.toc" />
+        <doc-toc :toc="doc.body?.toc" />
         <Valine />
       </template>
 

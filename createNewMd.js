@@ -1,7 +1,10 @@
 // 引入核心模块(fs)
 var fs = require("fs");
+var path = require("path");
 
-const ContentPath = "./content";
+
+const editorPath = `D:/Program Files/Typora/Typora.exe`;
+const ContentPath = "content";
 
 const args = process.argv.slice(2);
 if (args.length <= 0) {
@@ -21,7 +24,7 @@ Tags.forEach((element) => {
   // tags
   tags += `  - ${element} \n`;
 });
-if (fs.existsSync(`${ContentPath}/${fileName}`)) {
+if (fs.existsSync(`./${ContentPath}/${fileName}`)) {
   console.log("该命名已经存在，换一个");
   return;
 }
@@ -48,15 +51,28 @@ tags:
 title: ${Title}
 ---
 `;
-fs.writeFileSync(`${ContentPath}/${fileName}`, MDText, (err) => {
+fs.writeFileSync(`./${ContentPath}/${fileName}`, MDText, (err) => {
   if (err) {
     console.log(" 写入失败");
     return;
   }
 });
+const filePath = path.join(__dirname, `${ContentPath}/${fileName}`);
 
 console.log(
-  `写入成功,文件名：${Title},路径：${ContentPath}/${fileName},标签：${Tags.join(
+  `写入成功,文件名：${Title},路径：${filePath},标签：${Tags.join(
     ","
   )},日期：${currentDate}`
 );
+
+const exec = require("child_process").execFile;
+if (fs.existsSync(editorPath)) {
+  exec(editorPath, [filePath], function (err, data) {
+    if (err) {
+      throw err;
+    }
+    console.log(data.toString());
+  });
+} else {
+  console.log("没有找到编辑器，手动打开即可");
+}

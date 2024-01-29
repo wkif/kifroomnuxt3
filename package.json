@@ -8,7 +8,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint . --fix",
-    "new": "node ./utils/createNewMd.js"
+    "new": "node ./createNewMd.js"
   },
   "dependencies": {
     "@iconify-json/icon-park-outline": "^1.1.12",

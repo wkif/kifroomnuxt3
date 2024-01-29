@@ -5,6 +5,7 @@ export const siteConfig = {
   lang: 'zh-CN',
 }
 
+
 export const subNavLinks = [
   {
     title: 'Blog',
@@ -22,11 +23,11 @@ export const navLinks = [
     path: '/blog',
     icon: 'i-icon-park-outline-align-text-right-one',
   },
-  {
-    title: 'Projects',
-    path: '/projects',
-    icon: 'i-icon-park-outline-blocks-and-arrows',
-  },
+  // {
+  //   title: 'Projects',
+  //   path: '/projects',
+  //   icon: 'i-icon-park-outline-blocks-and-arrows',
+  // },
   {
     title: 'Tags',
     path: '/tags',
