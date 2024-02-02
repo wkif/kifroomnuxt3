@@ -1,12 +1,12 @@
 ---
-date: 2024-2-2  9:31:37
+date: 2024-02-02  16:07:50
 url: 
 aliases: 
 tags: 
   - rust 
   - 学习笔记 
 
-title: [转载] Rust 大佬给初学者的学习建议
+title: Rust大佬给初学者的学习建议
 ---
 
 > 本文章转载自 [Rustt](https://github.com/rustlang-cn/Rustt/blob/main/Articles/[2022-04-02] Rust 大佬给初学者的学习建议.md)
