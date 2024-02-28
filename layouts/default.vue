@@ -1,8 +1,10 @@
 <script lang="ts" setup>
+const route = useRoute();
 import NavBar from "./components/NavBar.vue";
 import Footer from "./components/Footer.vue";
 import Social from "./components/Social.vue";
 import Plum from "../composables/Plum";
+import { FullWidthPath } from "@/site.config";
 
 const el = ref<HTMLCanvasElement>();
 const el2 = ref<HTMLCanvasElement>();
@@ -43,7 +45,7 @@ function init() {
     initFlower();
   }, 1000);
 }
-
+const isFullWidth = FullWidthPath.includes(route.name as string);
 onMounted(() => {
   init();
 });
@@ -61,7 +63,7 @@ onMounted(() => {
     <Social />
   </aside>
   <main class="flex-1 px-7 py-10 w-100% m-t-5.5em">
-    <div class="max-w-70ch m-auto">
+    <div class="m-auto" :class="isFullWidth ? '' : 'max-w-70ch'">
       <slot />
       <Footer />
     </div>

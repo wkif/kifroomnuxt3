@@ -19,7 +19,7 @@ onMounted(() => {
 
 <template>
   <div class="absolute top-0 left-full h-full pl-2em hidden xl:block">
-    <nav class="sticky top-14 w-25em">
+    <nav class="sticky top-24 w-25em">
       <ul>
         <li v-for="(h2, h2Index) in props.toc.links" :key="h2Index" class="list-none relative  ">
           <span class="flex items-center">

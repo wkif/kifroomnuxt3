@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/-Rust-F3F3F3?style=flat&logo=rust&logoColor=white">
 </div>
 <div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
-  <img src="https://img.shields.io/badge/-Vue-46b882?style=flat&logo=vue.js&logoColor=white">
+   <img src="https://img.shields.io/badge/-Vue-46b882?style=flat&logo=vue.js&logoColor=white">
   <img src="https://img.shields.io/badge/-React-087EA4?style=flat&logo=react&logoColor=white">
   <img src="https://img.shields.io/badge/-wasm-408e43?style=flat&logo=WebAssembly&logoColor=white">
   <img src="https://img.shields.io/badge/miniprogram-09b955?style=flat&logo=wechat&logoColor=white">
@@ -22,7 +22,7 @@
 <div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
      <img src="https://img.shields.io/badge/-less-bf608e?style=flat&logo=less&logoColor=white">
      <img src="https://img.shields.io/badge/-sass-bf608e?style=flat&logo=sass&logoColor=white">
-     <img src="https://img.shields.io/badge/-unoss-bf608e?style=flat&logo=unoss&logoColor=white">
+     <img src="https://img.shields.io/badge/-uncoss-bf608e?style=flat&logo=unocss&logoColor=white">
     <img src="https://img.shields.io/badge/-vite-646CFF?style=flat&logo=vite&logoColor=white">
     <img src="https://img.shields.io/badge/-Webpack-%232C3A42?style=flat&logo=webpack&logoColor=white">
   	<img src="https://img.shields.io/badge/-ESLint-%234B32C3?style=flat&logo=eslint&logoColor=white">
@@ -38,20 +38,22 @@
 
 <img align="right" alt="GIF" src="https://github.com/devSouvik/devSouvik/blob/master/gif4.gif?raw=true" width="300"/>
 
-# Work/Study experience（One year's work experience）
 
-- 2019- 2023 XTU Network engineering
-- 2022- 2023 Daoyi (Changsha) Information Technology Co. LTD. Front-end intern
-- 2023-to date Beijing Yunda Digital Media Technology Co. LTD. Front-end intern
+# Work/Study Experience（One year's work experience）
+- 2019- 2023        XTU                                                      Network engineering
+- 2022- 2023        Daoyi (Changsha) Information Technology Co. LTD.         Front-end intern
+- 2023- to date      Beijing Yunda Digital Media Technology Co. LTD.          Front-end intern
 
-myBlog：<a href="https://blog.kifroom.icu/">kifroom</a>
+# Something About Me
 
-- :email: kif101001000@163.com
+- 📖: <a href="https://hexo.kifroom.icu/">kifroom</a>
+- 📧: kif101001000@163.com
 - 💬 wechat：rm-rf_kif
-- :orange_book: Focusing on Vue & Web
+- 🌐: Focusing on Vue & Web
 - :hammer: Programming enthusiast
 - :ram: Magic lover
 - :meat_on_bone: Meat lover
+
 
 # Github status
 

@@ -15,11 +15,11 @@ const path = post.join("/");
       </template>
 
       <template #empty>
-        <h1 class="text-center">Document is empty😅</h1>
+        <h1 class="text-center">好像是个空文档哎😅</h1>
       </template>
 
       <template #not-found>
-        <h1 class="text-center">Not Found Any Document😗</h1>
+        <h1 class="text-center">没找着这个文档😗</h1>
       </template>
     </ContentDoc>
   </section>

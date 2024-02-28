@@ -6,7 +6,7 @@ tags:
   - 旅游 
   - 记录 
 
-title: 北灵山-东
+title: 北灵山-冬
 ---
 
 ![MTXX_MH20240128_224453674](https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202401290937006.jpg)

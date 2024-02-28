@@ -22,11 +22,11 @@ export const navLinks = [
     path: "/blog",
     icon: "i-icon-park-outline-align-text-right-one",
   },
-  // {
-  //   title: 'Projects',
-  //   path: '/projects',
-  //   icon: 'i-icon-park-outline-blocks-and-arrows',
-  // },
+  {
+    title: "Photo",
+    path: "/photo",
+    icon: "i-icon-park-outline-blocks-and-arrows",
+  },
   {
     title: "Tags",
     path: "/tags",
@@ -43,6 +43,8 @@ export const navLinks = [
     icon: "i-icon-park-outline-grinning-face-with-open-mouth",
   },
 ];
+
+export const FullWidthPath = ["photo"];
 
 export const socialLinks = [
   {
