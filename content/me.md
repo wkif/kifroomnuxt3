@@ -1,6 +1,6 @@
 <!-- <div height="200px" align="center" style="display: flex; ">kif <img src="https://cdn.jsdelivr.net/gh/MaleWeb/picture/images/techblog/hi.gif" width="25"></div> -->
 <div align="center" style="display: flex; aign-items: center; width: 20%; ">
-     <img src="https://cdn.jsdelivr.net/gh/MaleWeb/picture/images/techblog/hi.gif" width="25"> <h2>kif</h2>
+     <img src="https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202404121045974.gif" width="25"> <h2>kif</h2>
   
 </div>
   <div align="center" style="display: flex; flex-wrap: wrap; align-items: center; height: 50px;">
@@ -36,7 +36,7 @@
 
 <br />
 
-<img align="right" alt="GIF" src="https://github.com/devSouvik/devSouvik/blob/master/gif4.gif?raw=true" width="300"/>
+<img align="right" alt="GIF" src="https://kiftravel.oss-cn-beijing.aliyuncs.com/img/202404121048365.gif" width="300"/>
 
 
 # Work/Study Experience（One year's work experience）
