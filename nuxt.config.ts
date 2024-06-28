@@ -21,6 +21,12 @@ export default defineNuxtConfig({
         { charset: 'UTF-8' },
         { 'http-equiv': 'X-UA-Compatible', 'content': 'IE=edge' },
       ],
+      script: [
+        {
+          src: "//sdk.51.la/js-sdk-pro.min.js"
+        },
+        { innerHTML: `LA.init({id:"KUG79JlZvdhCLiJc",ck:"KUG79JlZvdhCLiJc"})` },
+      ],
       noscript: [
         { children: 'JavaScript is required' },
       ],
