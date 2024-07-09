@@ -16,6 +16,10 @@ export default defineNuxtConfig({
         { name: "msapplication-TileColor", content: "#ffffff" },
         { charset: "UTF-8" },
         { "http-equiv": "X-UA-Compatible", content: "IE=edge" },
+        {
+          name: "referrer",
+          content: "strict-origin-when-cross-origin",
+        },
         // <meta name="msvalidate.01" content="0825B99EE365008C3D71C595BBCA41E3" />
         {
           name: "msvalidate.01",
