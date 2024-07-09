@@ -16,8 +16,23 @@ export default defineNuxtConfig({
         { name: "msapplication-TileColor", content: "#ffffff" },
         { charset: "UTF-8" },
         { "http-equiv": "X-UA-Compatible", content: "IE=edge" },
+        // <meta name="msvalidate.01" content="0825B99EE365008C3D71C595BBCA41E3" />
+        {
+          name: "msvalidate.01",
+          content: "0825B99EE365008C3D71C595BBCA41E3",
+        },
       ],
-      script: [],
+      script: [
+        {
+          innerHTML: `var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?a3e4c6e98dfa2d82e754005c8e5240fb";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();`,
+        },
+      ],
       noscript: [{ children: "JavaScript is required" }],
       htmlAttrs: {
         lang: siteConfig.lang,
