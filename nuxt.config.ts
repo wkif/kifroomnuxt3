@@ -25,6 +25,11 @@ export default defineNuxtConfig({
           name: "msvalidate.01",
           content: "0825B99EE365008C3D71C595BBCA41E3",
         },
+        // <meta name="baidu-site-verification" content="codeva-mTATCuR6RX" />
+        {
+          name: "baidu-site-verification",
+          content: "codeva-mTATCuR6RX",
+        },
       ],
       script: [
         {
