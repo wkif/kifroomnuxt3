@@ -23,4 +23,5 @@ const path = post.join("/");
       </template>
     </ContentDoc>
   </section>
+  <ToTop />
 </template>

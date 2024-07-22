@@ -2,7 +2,7 @@
 import { siteConfig } from "./site.config";
 
 export default defineNuxtConfig({
-  modules: ["@unocss/nuxt", "@vueuse/nuxt", "@nuxt/content"],
+  modules: ["@unocss/nuxt", "@vueuse/nuxt", "@nuxt/image", "@nuxt/content"],
 
   app: {
     rootId: "nuxt-root",
@@ -20,7 +20,6 @@ export default defineNuxtConfig({
           name: "referrer",
           content: "strict-origin-when-cross-origin",
         },
-        // <meta name="msvalidate.01" content="0825B99EE365008C3D71C595BBCA41E3" />
         {
           name: "msvalidate.01",
           content: "0825B99EE365008C3D71C595BBCA41E3",
@@ -66,6 +65,7 @@ export default defineNuxtConfig({
     "@/assets/styles/global.scss",
     "@/assets/styles/theme.css",
     "@/assets/styles/transition.css",
+    "@/assets/styles/font.css",
     "@/assets/styles/markdown.scss",
   ],
 
@@ -79,4 +79,6 @@ export default defineNuxtConfig({
       enabled: true,
     },
   },
+
+  compatibilityDate: "2024-07-10",
 });

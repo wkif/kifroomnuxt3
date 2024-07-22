@@ -1,12 +1,19 @@
 <script setup lang="ts">
-import { formattedDate } from '@/utils'
+import { formattedDate } from "@/utils";
 
-const props = defineProps(['article'])
+const props = defineProps(["article"]);
 </script>
 
 <template>
-  <NuxtLink :to="`/p${props.article._path}`">
-    <li :title="props.article.title" class="hover list-none mb-6 mt-2 flex flex-col md:(gap-2 flex-row items-center)">
+  <NuxtLink
+    :to="`/p${
+      props.article.custompath ? props.article.custompath : props.article._path
+    }`"
+  >
+    <li
+      :title="props.article.title"
+      class="hover list-none mb-6 mt-2 flex flex-col md:(gap-2 flex-row items-center)"
+    >
       <span class="text-lg">
         {{ props.article.title }}
       </span>

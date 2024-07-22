@@ -10,10 +10,6 @@ export const subNavLinks = [
     title: "Blog",
     path: "/blog",
   },
-  {
-    title: "Travel",
-    path: "/travel",
-  },
 ];
 
 export const navLinks = [
@@ -21,6 +17,11 @@ export const navLinks = [
     title: "Blog",
     path: "/blog",
     icon: "i-icon-park-outline-align-text-right-one",
+  },
+  {
+    title: "Travel",
+    path: "/travel",
+    icon: "i-icon-park-outline-airplane",
   },
   {
     title: "Tags",
