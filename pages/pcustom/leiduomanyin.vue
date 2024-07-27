@@ -85,7 +85,3 @@ const preview = (src: string) => {
   filePreview.value?.open();
 };
 </script>
-<style scoped>
-.title {
-}
-</style>
