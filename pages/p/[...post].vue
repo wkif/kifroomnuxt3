@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { checkoutPass } from "@/utils/index";
+import { checkoutPass, ifLock } from "@/utils/index";
 const route = useRoute();
 const post = route.params.post as Array<string>;
 const path = post.join("/");
-const isLock = ref(route.query.password ? true : false);
+const isLock = ref(false);
 const articles = ref({});
 const getData = async () => {
   articles.value = await queryContent(path).findOne();
@@ -15,7 +15,8 @@ const getData = async () => {
 
 const isErr = ref(false);
 const password = ref("");
-onMounted(() => {
+onMounted(async () => {
+  isLock.value = await ifLock(path);
   if (!isLock.value) {
     getData();
   } else {

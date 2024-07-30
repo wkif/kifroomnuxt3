@@ -1,13 +1,9 @@
 <script setup lang="ts">
 import { formattedDate } from "@/utils";
-
 const props = defineProps(["article"]);
-let path = props.article.custompath
+const path = props.article.custompath
   ? props.article.custompath
   : props.article._path;
-if (props.article.password) {
-  path = `${path}?password=${props.article.password}`;
-}
 </script>
 
 <template>

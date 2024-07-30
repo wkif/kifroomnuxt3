@@ -37,8 +37,18 @@ export async function getIncludedYearPosts(dirName: string) {
 }
 
 export async function checkoutPass(password: string, path: string) {
-  const post = await queryContent(path).findOne();
+  const post = await queryContent(path).only(["password"]).findOne();
   if (!post) return false;
   const hashedData = md5(password);
   return hashedData === post.password;
+}
+
+export async function ifLock(path: string) {
+  const post = await queryContent(path).only(["password"]).findOne();
+  if (!post) return false;
+  if (post.password) {
+    return true;
+  } else {
+    return false;
+  }
 }

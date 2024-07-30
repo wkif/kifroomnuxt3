@@ -44,7 +44,6 @@ program
   .command("new")
   .description("新建文章")
   .action(async () => {
-    console.log("start init koa project:");
     const {
       type,
       title,
