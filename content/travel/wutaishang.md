@@ -3,7 +3,7 @@ date: 2024-07-09  14:02:01
 url: 
 aliases: 
 tags: 
-
+# custompath: "custom/wutaishan"
 title: 五台山
 ---
 

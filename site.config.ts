@@ -10,6 +10,10 @@ export const subNavLinks = [
     title: "Blog",
     path: "/blog",
   },
+  {
+    title: "Life",
+    path: "/life",
+  },
 ];
 
 export const navLinks = [
