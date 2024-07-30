@@ -4,7 +4,7 @@ const program = new Command();
 const { pinyin } = require("pinyin-pro");
 const fs = require("fs");
 const path = require("path");
-
+const md5 = require("js-md5");
 const BLOGTYPE = [
   { name: "技术博客", value: 1, dirpath: "./content/blog" },
   { name: "杂记", value: 2, dirpath: "./content/life" },
@@ -54,6 +54,8 @@ program
       date,
       EditorProgramPath,
       customPage,
+      ifPassword,
+      password,
     } = await inquirer.prompt(InitPrompts);
     const pattern = new RegExp("[\u4E00-\u9FA5]+");
     let fileName = "";
@@ -73,10 +75,14 @@ program
       return;
     }
     let MDText = "";
+    if (ifPassword) {
+      MD5password = md5(password);
+    } else {
+      MD5password = false;
+    }
     if (customPage == 1) {
       // 自定义页面
-      MDText =
-        `---
+      MDText = `---
     date: ${date}
     tags: ${tags}
     title: ${title}
@@ -99,13 +105,13 @@ program
         }
       }
     } else {
-      MDText =
-        `---
+      MDText = `---
     date: ${date}
     tags: ${tags}
     title: ${title}
     author: ${author}
     categories: ${categories}
+    password: ${MD5password}
 ---
     `;
     }
@@ -193,8 +199,7 @@ const InitPrompts = [
   },
   {
     name: "EditorProgramPath",
-    message:
-      "编辑器路径，如：Typora (https://typora.io/)",
+    message: "编辑器路径，如：Typora (https://typora.io/)",
     default: "D:/Program Files/Typora/Typora.exe",
   },
   {
@@ -203,15 +208,38 @@ const InitPrompts = [
     message: "自定义页面?",
     choices: [
       {
+        name: "no",
+        value: 0,
+      },
+      {
         name: "yes",
         value: 1,
       },
+    ],
+    default: 0,
+  },
+  {
+    type: "list",
+    name: "ifPassword",
+    when: (answers) => answers.customPage === 0,
+    message: "加密吗？",
+    choices: [
       {
         name: "no",
         value: 0,
       },
+      {
+        name: "yes",
+        value: 1,
+      },
     ],
-    default: 0,
+  },
+  {
+    name: "password",
+    type: "password",
+    when: (answers) => answers.ifPassword === 1,
+    message: "密码是",
+    default: "123",
   },
 ];
 

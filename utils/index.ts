@@ -1,4 +1,5 @@
 import { format, parseISO } from "date-fns";
+import { md5 } from "js-md5";
 
 export function formattedDate(date: string) {
   if (!date) return "";
@@ -25,5 +26,19 @@ export function insertYearToPosts(posts: any) {
 
 export async function getIncludedYearPosts(dirName: string) {
   const result = await queryContent(dirName).sort({ date: -1 }).find();
+  result.forEach((post: any) => {
+    if (post.password) {
+      post.body = {};
+      post.password = true;
+      post.description = "";
+    }
+  });
   return insertYearToPosts(result);
+}
+
+export async function checkoutPass(password: string, path: string) {
+  const post = await queryContent(path).findOne();
+  if (!post) return false;
+  const hashedData = md5(password);
+  return hashedData === post.password;
 }
