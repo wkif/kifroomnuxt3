@@ -28,6 +28,11 @@ export const navLinks = [
     icon: "i-icon-park-outline-airplane",
   },
   {
+    title: "Projects",
+    path: "/project",
+    icon: "i-icon-park-outline-application",
+  },
+  {
     title: "Tags",
     path: "/tags",
     icon: "i-icon-park-outline-tag-one",
@@ -63,31 +68,26 @@ export const projectList = [
   {
     name: "Projects",
     content: [
-      // {
-      //   name: 'Nuxt Blog',
-      //   desc: 'My blog site, base on Nuxt',
-      //   path: 'https://github.com/chansee97/nuxt-blog',
-      // },
-      // {
-      //   name: 'Nova Admin',
-      //   desc: 'a complete admin template',
-      //   path: 'https://github.com/chansee97/nova-admin',
-      // },
-      // {
-      //   name: 'Nova Admin Nest',
-      //   desc: 'The nest backend for nova admin',
-      //   path: 'https://github.com/chansee97/nove-admin-nest',
-      // },
+      {
+        name: "bamboo",
+        desc: "The bamboo powered by canvas",
+        path: "/project/bamboo",
+      },
     ],
   },
   {
     name: "Starter",
     content: [
-      // {
-      //   name: 'Virtuoso',
-      //   desc: 'My simply vue starter',
-      //   path: 'https://github.com/chansee97/virtuoso',
-      // },
+      {
+        name: "kifsnuxt3template",
+        desc: "My simply nuxt3 starter, Vite, Unocss, TypeScript, Eslint, Vueuse",
+        path: "https://github.com/wkif/kifsnuxt3template",
+      },
+      {
+        name: "kifsReactTemplate",
+        desc: "My simple react template",
+        path: "https://github.com/wkif/kifsReactTemplate",
+      },
     ],
   },
 ];

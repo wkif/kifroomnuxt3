@@ -53,7 +53,6 @@ onMounted(() => {
   let interable = 0;
   const max_x = document.body.clientWidth;
   const max_y = document.body.clientHeight;
-  console.log("max_x", max_x, max_y);
 
   const step = function (x: number, y: number, rad: number) {
     const p1 = { x, y };
